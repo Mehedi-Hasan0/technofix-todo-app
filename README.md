@@ -1,8 +1,14 @@
-# React + Vite
+## TechnoFix Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a todo app that can be used to track daily task.
 
-Currently, two official plugins are available:
+#### Feature
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. User can create, edit, update, and delete any task.
+2. Task is stored in the localstorage for persisting data and smooth user experience.
+3. Task is sorted based on priority for user to keep eye on their high priority task first.
+4. Task is categorized based on active and completed to track task.
+
+#### Techstack
+
+React.Js, Tailwind.CSS, DaisyUi
