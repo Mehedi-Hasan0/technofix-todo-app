@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@layer utilities {
+  .main-container {
+    @apply min-w-[260px] sm:min-w-[320px] md:max-w-2xl xl:max-w-screen-md 2xl:max-w-screen-lg mx-auto min-h-screen pt-8 md:pt-14 lg:pt-16 xl:pt-20 2xl:pt-24 px-10 sm:px-12 md:px-14;
+  }
+  .sub-container {
+    @apply min-w-[300px] sm:min-w-[450px] md:min-w-full pt-3;
+  }
+}
