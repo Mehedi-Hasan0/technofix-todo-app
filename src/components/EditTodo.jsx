@@ -1,29 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useToDos } from "../context/TodoContext";
 import Button from "./ui/Button";
 
-const AddTodo = () => {
+const EditTodo = ({ todoId, priority }) => {
   // CONTEXT variables
-  const { handleAddToDo } = useToDos();
+  const { handleEditToDO } = useToDos();
   // STATE
   const [toDo, setToDo] = useState({
     task: "",
-    priority: "", // using default value low
+    priority, // using default value low
   });
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
     // saving todos to localstorage and to the context
-    handleAddToDo(toDo);
+    handleEditToDO(todoId, toDo.task, toDo.priority);
 
     // making todo empty for new todo
-    setToDo({ task: "", priority: "" });
+    setToDo({ task: "", priority: priority });
+
+    // closing modal
+    document.getElementById("edit_modal").close();
   };
+
+  useEffect(() => {
+    setToDo((prevToDo) => ({
+      ...prevToDo,
+      priority: priority,
+    }));
+  }, [priority]);
 
   return (
     <form
-      onSubmit={handleFormSubmit}
+      onSubmit={(e) => {
+        handleFormSubmit(e);
+      }}
       className="sub-container flex flex-col items-center gap-5"
     >
       <textarea
@@ -42,11 +54,11 @@ const AddTodo = () => {
       />
       <div className="flex items-center gap-5">
         <Button
-          btnTitle="Add"
+          btnTitle="Edit"
           className="px-6 2xl:px-8 bg-[#68b984] text-center min-w-[120px]"
         />
         {/* priority options */}
-        <div className="dropdown dropdown-hover dropdown-top dropdown-end md:dropdown-right">
+        <div className="dropdown dropdown-top dropdown-end">
           <div
             tabIndex={0}
             role="button"
@@ -58,7 +70,7 @@ const AddTodo = () => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52"
+            className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52 ml-2"
           >
             <li
               onClick={() => {
@@ -97,4 +109,4 @@ const AddTodo = () => {
   );
 };
 
-export default AddTodo;
+export default EditTodo;

@@ -19,4 +19,10 @@ body {
   .sub-container {
     @apply min-w-[300px] sm:min-w-[450px] md:min-w-full pt-3;
   }
+  .active {
+    @apply border-b-[1.5px] border-[#68b984];
+  }
+  .non-active {
+    @apply border-b-[1.5px] border-transparent;
+  }
 }
