@@ -17,7 +17,7 @@ const TodoContext = ({ children }) => {
 
   const handleAddToDo = (todo) => {
     const todoPriority =
-      todo?.priority && todo?.priority.length !== 0 ? todo?.priority : "low";
+      todo?.priority && todo?.priority.length !== 0 ? todo?.priority : "Low";
     const todoTask = todo?.task;
     // saving todo in localstorage
     setTodo((prev) => {
