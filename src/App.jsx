@@ -1,3 +1,4 @@
+import AddTodo from "./components/AddTodo";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
         TechnoFix todo app
       </h2>
       <Navbar />
+      <AddTodo />
     </main>
   );
 }
