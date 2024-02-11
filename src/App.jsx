@@ -1,5 +1,7 @@
 import AddTodo from "./components/AddTodo";
 import Navbar from "./components/Navbar";
+import Todo from "./components/Todo";
+import TodoCounter from "./components/TodoCounter";
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       </h2>
       <Navbar />
       <AddTodo />
+      <TodoCounter />
+      <Todo />
     </main>
   );
 }
